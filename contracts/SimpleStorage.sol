@@ -3,7 +3,6 @@
 pragma solidity 0.8.11;
 
 contract SimpleStorage {
-
     // this will get initiaalized to 0!
     uint256 favoriteNumber;
     bool favoriteBool;
@@ -21,7 +20,7 @@ contract SimpleStorage {
     }
 
     // view, pure
-    function retrieve() public view returns(uint256) {
+    function retrieve() public view returns (uint256) {
         return favoriteNumber;
     }
 
@@ -29,5 +28,4 @@ contract SimpleStorage {
         people.push(Person(_favoriteNumber, _name));
         nameToFavoriteNumber[_name] = _favoriteNumber;
     }
-
 }
