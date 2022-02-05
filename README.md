@@ -35,3 +35,7 @@ $ npm install ganache --global
 $ ganache
 $ python3 deploy.py
 ```
+
+## Other
+
+https://chainlist.org/

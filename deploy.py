@@ -4,6 +4,8 @@ from web3 import Web3
 from dotenv import load_dotenv
 import os
 
+from web3.middleware import geth_poa_middleware
+
 load_dotenv()
 install_solc("0.8.11")
 
@@ -38,6 +40,8 @@ abi = compiled_sol["contracts"]["SimpleStorage.sol"]["SimpleStorage"]["abi"]
 
 # for connecting to ganache
 w3 = Web3(Web3.HTTPProvider(os.getenv("WEB3_PROVIDER")))
+w3.middleware_onion.inject(geth_poa_middleware, layer=0)
+
 chain_id = int(os.getenv("CHAIN_ID"))
 my_address = os.getenv("ACCOUNT_ADDRESS")
 private_key = os.getenv("PRIVATE_KEY")
